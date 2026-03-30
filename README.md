@@ -19,10 +19,50 @@ Step 6: Plot the sequence with x-label and y-label with suitable title
 Step 7: Terminate the program.
 
 ## PROGRAM: 
+```clc;%clear screen
+clear all;%clear screen
+close all;%close all figure windows
 
+%input sequence
+a=input('enter the starting x(n)');
+x=input('enter the x(n) sequence');
+n=a:1:length(x)+a-1;
 
+figure(1);
+stem(n,x);
+xlabel('time');
+ylabel('amplitute');
+title('input sequence');
+
+%impulse sequence
+b=input('enter the starting h(n)');
+y=input('enter the h(n) sequence');
+m=b:1:length(y)+b-1;
+
+figure(2);
+stem(m,y);
+xlabel('time');
+ylabel('amplitude');
+title('impulse response')
+
+%linear convolution
+z=conv2(x,y);
+n1=a+b:1:length(z)+a+b-1;
+
+figure(3);
+stem(n1,z);
+xlabel('time');
+ylabel('amplitude');
+title('linear convolution');
+```
 ## OUTPUT:
+<img width="1725" height="986" alt="image" src="https://github.com/user-attachments/assets/fb397fe1-f98f-41ca-a3ba-d4933b3ff4cb" />
 
+<img width="1694" height="962" alt="image" src="https://github.com/user-attachments/assets/44dc9325-9632-448c-b198-bafbe7cb5315" />
+
+<img width="1736" height="967" alt="image" src="https://github.com/user-attachments/assets/f111b9f3-1bb6-4828-aefa-26085a8ccab8" />
 
 ## RESULT:
+![WhatsApp Image 2026-03-30 at 6 26 31 PM](https://github.com/user-attachments/assets/5b053edc-3722-435e-901d-5f12ba312db9)
+
 
